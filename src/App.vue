@@ -1,20 +1,16 @@
 <template>
-  <the-navigation @set-page="setActivePage"></the-navigation>
-  <main>
-    <component :is="activePage"></component>
-  </main>
+  <the-navigation>
+    <router-link to="/teams">Teams</router-link> |
+    <router-link to="/users">Users</router-link>
+  </the-navigation>
+  <router-view />
 </template>
 
 <script>
-import TeamsList from "./components/teams/TeamsList.vue";
-import UsersList from "./components/users/UsersList.vue";
 import TheNavigation from "./components/nav/TheNavigation.vue";
-
 export default {
   components: {
     TheNavigation,
-    TeamsList,
-    UsersList,
   },
   data() {
     return {
@@ -45,18 +41,16 @@ export default {
     },
   },
 };
+
 </script>
 
 <style>
-* {
-  box-sizing: border-box;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
-html {
-  font-family: sans-serif;
-}
-
-body {
-  margin: 0;
-}
 </style>
