@@ -1,8 +1,5 @@
 <template>
-  <the-navigation>
-    <router-link to="/teams">Teams</router-link> |
-    <router-link to="/users">Users</router-link>
-  </the-navigation>
+  <the-navigation></the-navigation>
   <router-view />
 </template>
 
@@ -14,7 +11,6 @@ export default {
   },
   data() {
     return {
-      activePage: "teams-list",
       teams: [
         { id: "t1", name: "Frontend Engineers", members: ["u1", "u2"] },
         { id: "t2", name: "Backend Engineers", members: ["u1", "u2", "u3"] },
@@ -35,13 +31,7 @@ export default {
       users: this.users,
     };
   },
-  methods: {
-    setActivePage(page) {
-      this.activePage = page;
-    },
-  },
 };
-
 </script>
 
 <style>
@@ -52,5 +42,4 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
 </style>

@@ -1,4 +1,5 @@
 <template>
+  <button @click="clickBtn">Go to teams</button>
   <ul>
     <user-item
       v-for="user in users"
@@ -17,6 +18,11 @@ export default {
     UserItem,
   },
   inject: ["users"],
+  methods: {
+    clickBtn() {
+      this.$router.push("/teams");
+    },
+  },
 };
 </script>
 
